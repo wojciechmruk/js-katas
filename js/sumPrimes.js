@@ -11,23 +11,17 @@ The provided number may not be a prime.
 
 
 function sumPrimes(num) {
-	if (num < 4) return num;
-	var sum = 0;
-	var primes = [2, 3];
-	for (var i = 3; i<=num ;i++){
-		while 
+	if (num == 1 || num == 3) return num;
+	
+	var sum = 1;
+
+	for (var i = 1; i <=num; i++){
+		sum += (i%2 || i % 3) ? 0 : i;
 	}
 
-
-
+  return num;
 }
 
-  return sum;
-}
+console.log(sumPrimes(10)); //should return 17.
 
-console.log(' result: '+sumPrimes(30)); //should return 17.
-
-// console.log(sumPrimes(977)); //should return 73156.
-
-
-// 2 3 5 7 11 13 17 19 23 31
+console.log(sumPrimes(977)); //should return 73156.
